@@ -1,5 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import herImage from "./assets/her.jpeg";
+import Cat from "./assets/cat.gif";
+import Cat2 from "./assets/cat2.gif";
+import Cat3 from "./assets/cat3.gif";
 
 function App() {
   const [scene, setScene] = useState(0);
@@ -54,19 +58,43 @@ function App() {
       <AnimatePresence mode="wait">
 
         {/* INTRO */}
-        {scene === 0 && (
-          <motion.div
-            key="intro"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="absolute text-center"
-          >
-            <h1 className="text-3xl text-white font-semibold">
-              Hey My Princess 💗
-            </h1>
-          </motion.div>
-        )}
+      {scene === 0 && (
+  <motion.div
+    key="intro"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    className="absolute flex flex-col items-center justify-center text-center px-6 space-y-8"
+  >
+
+    {/* HER IMAGE */}
+    <motion.div
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 1.2 }}
+      className="relative"
+    >
+      <div className="absolute inset-0 rounded-full bg-white/20 blur-xl scale-110"></div>
+
+      <img
+        src={herImage}
+        alt="My Love"
+        className="relative w-40 h-40 object-cover rounded-full border-4 border-white shadow-2xl"
+      />
+    </motion.div>
+
+    {/* TEXT */}
+    <motion.h1
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.8 }}
+      className="text-2xl md:text-3xl text-white font-semibold drop-shadow-lg"
+    >
+      Hey My Princess 💗
+    </motion.h1>
+
+  </motion.div>
+)}
 
         {/* CAT */}
         {scene === 1 && (
@@ -82,7 +110,15 @@ function App() {
               transition={{ repeat: Infinity, duration: 1.5 }}
               className="text-8xl"
             >
-              🐱
+             <div className="relative flex justify-center">
+  <div className="absolute w-44 h-44 bg-white/20 blur-2xl rounded-full"></div>
+
+  <img
+    src={Cat3}
+    alt="Cute Cat"
+    className="relative w-36 md:w-44 object-contain drop-shadow-2xl"
+  />
+</div>
             </motion.div>
 
             <button
@@ -103,7 +139,15 @@ function App() {
             exit={{ opacity: 0 }}
             className="absolute text-center px-8 space-y-6"
           >
-            <div className="text-7xl">😻</div>
+            <div className="text-7xl">      <div className="relative flex justify-center">
+  <div className="absolute w-44 h-44 bg-white/20 blur-2xl rounded-full"></div>
+
+  <img
+    src={Cat2}
+    alt="Cute Cat"
+    className="relative w-36 md:w-44 object-contain drop-shadow-2xl"
+  />
+</div></div>
 
             <p className="text-white text-lg leading-relaxed">
               You are my favorite person,  
@@ -128,10 +172,19 @@ function App() {
             animate={{ opacity: 1 }}
             className="absolute text-center space-y-10 w-full px-6"
           >
-            <div className="text-7xl animate-bounce">🐱</div>
+            <div className="text-7xl animate-bounce"><img src="https://tenor.com/en-GB/view/white-cute-cat-hearts-gif-25782905" alt="" /></div>
 
             <h2 className="text-2xl text-white">
               Will You Be My Valentine? 💖
+                    <div className="relative flex justify-center">
+  <div className="absolute w-44 h-44 bg-white/20 blur-2xl rounded-full"></div>
+
+  <img
+    src={Cat3}
+    alt="Cute Cat"
+    className="relative w-36 md:w-44 object-contain drop-shadow-2xl"
+  />
+</div>
             </h2>
 
             {/* BUTTON ARENA */}
@@ -202,7 +255,15 @@ function App() {
     transition={{ duration: 0.8 }}
     className="text-8xl drop-shadow-lg"
   >
-    😻
+          <div className="relative flex justify-center">
+  <div className="absolute w-55 h-55 bg-white/20 blur-2xl rounded-full"></div>
+
+  <img
+    src={Cat}
+    alt="Cute Cat"
+    className="relative w-36 md:w-44 object-contain drop-shadow-2xl"
+  />
+</div>
   </motion.div>
 
   <motion.h1
